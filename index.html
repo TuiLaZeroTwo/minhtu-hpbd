@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 Happy Birthday Yến Phương 🎂</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        dancing: ['Dancing Script', 'cursive'],
+                        quicksand: ['Quicksand', 'sans-serif'],
+                        pacifico: ['Pacifico', 'cursive'],
+                    },
+                    colors: {
+                        pink: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                        },
+                        cream: '#fff8f0',
+                        peach: '#ffd6c4',
+                        lavender: '#e8d5f5',
+                        mint: '#d4f0e7',
+                        softYellow: '#fff3cd',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delay': 'float 6s ease-in-out 2s infinite',
+                        'float-slow': 'float 8s ease-in-out 1s infinite',
+                        'sparkle': 'sparkle 2s ease-in-out infinite',
+                        'bounce-slow': 'bounce 3s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                        'fade-in-up-delay': 'fadeInUp 1s ease-out 0.3s forwards',
+                        'fade-in-up-delay2': 'fadeInUp 1s ease-out 0.6s forwards',
+                        'heartbeat': 'heartbeat 1.5s ease-in-out infinite',
+                        'wiggle': 'wiggle 2s ease-in-out infinite',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out forwards',
+                        'slide-in-right': 'slideInRight 0.8s ease-out forwards',
+                        'confetti-fall': 'confettiFall linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        sparkle: {
+                            '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+                            '50%': { opacity: '0.5', transform: 'scale(1.2)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        heartbeat: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '25%': { transform: 'scale(1.1)' },
+                            '50%': { transform: 'scale(1)' },
+                            '75%': { transform: 'scale(1.05)' },
+                        },
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        confettiFall: {
+                            '0%': { transform: 'translateY(-100vh) rotate(0deg)', opacity: '1' },
+                            '100%': { transform: 'translateY(100vh) rotate(720deg)', opacity: '0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #f9a8d4 #fdf2f8;
+        }
+        *::-webkit-scrollbar { width: 6px; }
+        *::-webkit-scrollbar-track { background: #fdf2f8; }
+        *::-webkit-scrollbar-thumb { background: #f9a8d4; border-radius: 10px; }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #ec4899, #8b5cf6, #ec4899);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 200% center; }
+        }
+
+        .section-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .section-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .confetti-piece {
+            position: fixed;
+            top: -20px;
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        .cake-candle {
+            animation: candleFlicker 0.3s ease-in-out infinite alternate;
+        }
+        @keyframes candleFlicker {
+            0% { transform: scaleY(1) scaleX(1); }
+            100% { transform: scaleY(1.1) scaleX(0.9); }
+        }
+
+        .petal {
+            position: fixed;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.7;
+        }
+
+        @keyframes petalFall {
+            0% { transform: translateY(-10vh) rotate(0deg) translateX(0px); opacity: 0.8; }
+            25% { transform: translateY(20vh) rotate(90deg) translateX(30px); }
+            50% { transform: translateY(45vh) rotate(180deg) translateX(-20px); }
+            75% { transform: translateY(70vh) rotate(270deg) translateX(25px); }
+            100% { transform: translateY(110vh) rotate(360deg) translateX(-15px); opacity: 0; }
+        }
+
+        .sparkle-star {
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .image-frame {
+            position: relative;
+            overflow: hidden;
+        }
+        .image-frame::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 3px solid rgba(244, 114, 182, 0.3);
+            border-radius: inherit;
+            z-index: 1;
+        }
+        .image-frame::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.15) 50%, transparent 60%);
+            animation: shimmer 3s infinite;
+            z-index: 2;
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%); }
+            100% { transform: translateX(100%) translateY(100%); }
+        }
+
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        body {
+            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 25%, #fff8f0 50%, #e8d5f5 75%, #fdf2f8 100%);
+            background-size: 400% 400%;
+            animation: bgShift 15s ease infinite;
+        }
+        @keyframes bgShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .quote-mark {
+            font-size: 4rem;
+            line-height: 1;
+            color: rgba(244, 114, 182, 0.2);
+            font-family: Georgia, serif;
+        }
+
+        .heart-particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 200;
+            font-size: 1.2rem;
+            animation: heartRise 3s ease-out forwards;
+        }
+        @keyframes heartRise {
+            0% { opacity: 1; transform: translateY(0) scale(0.5); }
+            50% { opacity: 0.8; transform: translateY(-100px) scale(1); }
+            100% { opacity: 0; transform: translateY(-200px) scale(0.3); }
+        }
+
+        .music-note {
+            position: fixed;
+            pointer-events: none;
+            z-index: 50;
+            font-size: 1.5rem;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="font-quicksand text-gray-700 overflow-x-hidden min-h-screen">
+
+    <!-- Floating Petals Container -->
+    <div id="petals-container"></div>
+
+    <!-- Music Toggle Button -->
+    <button id="musicBtn" onclick="toggleMusic()" class="fixed top-4 right-4 z-[999] w-12 h-12 rounded-full glass-card flex items-center justify-center text-pink-500 hover:text-pink-600 hover:scale-110 transition-all duration-300 shadow-lg">
+        <span id="musicIcon" class="text-xl">🔇</span>
+    </button>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-sweetdreams.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- ===================== HERO SECTION ===================== -->
+    <section id="hero" class="relative min-h-screen flex flex-col items-center justify-center px-4 py-12">
+        <!-- Decorative Elements -->
+        <div class="absolute top-10 left-10 text-5xl animate-float opacity-60">🌸</div>
+        <div class="absolute top-20 right-16 text-4xl animate-float-delay opacity-50">✨</div>
+        <div class="absolute bottom-20 left-20 text-3xl animate-float-slow opacity-40">🎀</div>
+        <div class="absolute bottom-32 right-10 text-4xl animate-float opacity-50">🌷</div>
+        <div class="absolute top-1/3 left-8 text-2xl animate-sparkle opacity-30">💫</div>
+        <div class="absolute top-1/2 right-8 text-3xl animate-float-delay opacity-40">🦋</div>
+
+        <!-- Birthday Cake Emoji -->
+        <div class="text-7xl md:text-8xl mb-4 animate-bounce-slow">🎂</div>
+
+        <!-- Main Title -->
+        <h1 class="font-dancing text-5xl md:text-7xl lg:text-8xl font-bold gradient-text text-center mb-3 leading-tight">
+            Happy Birthday!
+        </h1>
+        <h2 class="font-pacifico text-3xl md:text-5xl text-pink-400 text-center mb-6 animate-heartbeat">
+            Yến Phương 🌸
+        </h2>
+
+        <!-- Date Badge -->
+        <div class="glass-card rounded-full px-6 py-2 mb-8 animate-wiggle">
+            <span class="text-pink-500 font-semibold text-lg">📅 28 / 03 / 2005</span>
+        </div>
+
+        <!-- Profile Image -->
+        <div class="image-frame rounded-3xl w-64 h-64 md:w-80 md:h-80 mb-8 shadow-2xl animate-float">
+            <img src="imgs/IMG_9070.webp" alt="Yến Phương" class="w-full h-full object-cover rounded-3xl">
+        </div>
+
+        <!-- Age Badge -->
+        <div class="glass-card rounded-2xl px-8 py-4 text-center shadow-lg mb-20">
+            <p class="text-pink-400 font-medium text-sm uppercase tracking-widest">Turning</p>
+            <p class="text-5xl md:text-6xl font-bold gradient-text font-dancing">21</p>
+            <p class="text-pink-400 font-medium text-sm uppercase tracking-widest">Years Old</p>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-4 flex flex-col items-center gap-1 animate-bounce">
+            <span class="text-pink-300 text-sm font-medium">Cuộn xuống nhé ~</span>
+            <span class="text-pink-400 text-2xl">↓</span>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 1: GREETING ===================== -->
+    <section class="section-reveal px-4 py-16 md:py-24">
+        <div class="max-w-3xl mx-auto">
+            <div class="glass-card rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden">
+                <!-- Decorative Corner -->
+                <div class="absolute -top-6 -left-6 text-6xl opacity-20">🌼</div>
+                <div class="absolute -bottom-6 -right-6 text-6xl opacity-20">🌼</div>
+
+                <!-- Section Header -->
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="text-3xl">👋</span>
+                    <h3 class="font-dancing text-3xl md:text-4xl text-pink-500 font-bold">Haloooo~</h3>
+                </div>
+
+                <!-- Content -->
+                <div class="space-y-4 text-base md:text-lg leading-relaxed text-gray-600">
+                    <p>
+                        Xin chào <span class="text-pink-500 font-semibold">tiên nữ</span> đang ở phía sau màn hình kia~ ✨
+                    </p>
+                    <p>
+                        Hôm nay là ngày <span class="font-bold text-pink-500">28/3</span> phải không nhỉ? Vậy để tui để cho nghe một câu chuyện cổ tích nhé! 📖
+                    </p>
+                </div>
+
+                <!-- Decorative Divider -->
+                <div class="flex items-center justify-center gap-2 mt-8">
+                    <span class="text-pink-200">━━━</span>
+                    <span class="text-xl">🌸</span>
+                    <span class="text-pink-200">━━━</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 2: FAIRY TALE ===================== -->
+    <section class="section-reveal px-4 py-16 md:py-24">
+        <div class="max-w-3xl mx-auto">
+            <div class="glass-card rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden">
+                <!-- Decorative Stars -->
+                <div class="absolute top-4 right-8 text-2xl animate-sparkle">⭐</div>
+                <div class="absolute top-12 right-20 text-lg animate-sparkle" style="animation-delay: 0.5s;">✨</div>
+                <div class="absolute top-6 right-32 text-xl animate-sparkle" style="animation-delay: 1s;">💫</div>
+
+                <!-- Section Header -->
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="text-3xl">📖</span>
+                    <h3 class="font-dancing text-3xl md:text-4xl text-pink-500 font-bold">Câu Chuyện Cổ Tích</h3>
+                </div>
+
+                <!-- Quote -->
+                <div class="relative pl-6 border-l-4 border-pink-200 space-y-5 text-base md:text-lg leading-relaxed text-gray-600">
+                    <span class="quote-mark absolute -left-1 -top-2">"</span>
+
+                    <p>
+                        Vào đúng ngày này <span class="font-bold text-purple-500">21 năm</span> về trước, một <span class="text-pink-500 font-semibold">thiên sứ</span> có sắc đẹp thuần khiết trên thiên đàng, một vì sao sáng chói nhất giữa hàng triệu ngôi sao khác đã quyết định đầu thai xuống trần gian để sống một cuộc sống thật ý nghĩa. 🌟
+                    </p>
+
+                    <p>
+                        Cô thích đi ăn đi chơi lắm, đặc biệt là <span class="inline-flex items-center gap-1 bg-pink-100 rounded-full px-3 py-0.5 text-pink-600 font-medium">🍰 bánh ngọt</span>, <span class="inline-flex items-center gap-1 bg-green-100 rounded-full px-3 py-0.5 text-green-600 font-medium">🍵 matcha latte</span> và <span class="inline-flex items-center gap-1 bg-red-100 rounded-full px-3 py-0.5 text-red-600 font-medium">🍓 dâu</span> nữa.
+                    </p>
+
+                    <p>
+                        Mặc dù trần gian đã đối xử không tốt với cô, nhưng cô vẫn sống là chính mình, được làm những gì mình muốn và trở thành <span class="text-pink-500 font-semibold">phiên bản tốt hơn</span> qua từng ngày. 🌷
+                    </p>
+
+                    <p>
+                        Cô ấy <span class="font-bold text-pink-500">mạnh mẽ</span> lắm, luôn vượt qua khó khăn, thử thách mà vẫn tươi cười, thậm chí còn <span class="text-pink-400 italic">cười rất xinh</span> nữa. 😊
+                    </p>
+
+                    <p class="text-center text-xl md:text-2xl font-dancing text-pink-500 py-4">
+                        À quên, thiên sứ này có một cái tên rất hay đó, bà có biết là gì không?
+                    </p>
+                </div>
+
+                <!-- Name Reveal -->
+                <div class="mt-8 text-center">
+                    <div class="inline-block glass-card rounded-2xl px-8 py-6 shadow-lg">
+                        <p class="text-sm text-pink-400 uppercase tracking-widest mb-2">Đó là...</p>
+                        <p class="font-dancing text-4xl md:text-5xl gradient-text font-bold">Yến Phương</p>
+                        <p class="text-3xl mt-2 animate-heartbeat">💖</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 3: BIRTHDAY WISHES ===================== -->
+    <section class="section-reveal px-4 py-16 md:py-24">
+        <div class="max-w-3xl mx-auto">
+            <div class="glass-card rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden">
+                <!-- Decorative -->
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 text-4xl">🎉</div>
+
+                <!-- Section Header -->
+                <div class="text-center mb-10">
+                    <h3 class="font-dancing text-3xl md:text-4xl text-pink-500 font-bold mb-2">Lời Chúc Sinh Nhật</h3>
+                    <p class="text-gray-400 text-sm">cho Dâu Héo aka Yến Phương 🍓</p>
+                </div>
+
+                <!-- Wishes Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                    <!-- Wish Cards -->
+                    <div class="bg-gradient-to-br from-pink-50 to-pink-100 rounded-2xl p-5 border border-pink-200/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <span class="text-2xl mb-2 block">🌈</span>
+                        <p class="text-gray-600 text-sm md:text-base">Chúc cho bà có một tuổi mới thật <span class="font-semibold text-pink-500">hạnh phúc</span>, thật <span class="font-semibold text-purple-500">yên bình</span></p>
+                    </div>
+                    <div class="bg-gradient-to-br from-green-50 to-mint rounded-2xl p-5 border border-green-200/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <span class="text-2xl mb-2 block">💪</span>
+                        <p class="text-gray-600 text-sm md:text-base">Luôn <span class="font-semibold text-green-600">khoẻ mạnh</span> và được sống với những gì mình mơ ước nhé</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-50 to-lavender rounded-2xl p-5 border border-purple-200/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <span class="text-2xl mb-2 block">🔥</span>
+                        <p class="text-gray-600 text-sm md:text-base">Chúc cho bà dù dốc cạn sức lực, cũng sẽ <span class="font-semibold text-purple-500">không giữ lại niềm tiếc nuối</span></p>
+                    </div>
+                    <div class="bg-gradient-to-br from-yellow-50 to-softYellow rounded-2xl p-5 border border-yellow-200/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <span class="text-2xl mb-2 block">⛵</span>
+                        <p class="text-gray-600 text-sm md:text-base">Chúc cho những ngày tháng sau này <span class="font-semibold text-amber-600">thuận buồm xuôi gió</span>, không còn chông gai nữa</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-5 border border-blue-200/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <span class="text-2xl mb-2 block">🌟</span>
+                        <p class="text-gray-600 text-sm md:text-base">Luôn gặp được <span class="font-semibold text-blue-500">quý nhân phù trợ</span>, dù cho có khó khăn thì cũng đừng bỏ cuộc nhé!</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-rose-50 to-rose-100 rounded-2xl p-5 border border-rose-200/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <span class="text-2xl mb-2 block">😊</span>
+                        <p class="text-gray-600 text-sm md:text-base">Nhớ <span class="font-semibold text-rose-500">ngủ đủ giấc</span>, ăn đủ bữa, không khóc nhiều và luôn cười thật tươi nhé!</p>
+                    </div>
+                </div>
+
+                <!-- Special Note -->
+                <div class="text-center bg-gradient-to-r from-pink-50 via-white to-pink-50 rounded-2xl p-6 border border-pink-100">
+                    <p class="text-pink-400 italic font-medium text-sm md:text-base">
+                        "Bà cười xinh lắm đó" 💕
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 4: CLOUD WISHES ===================== -->
+    <section class="section-reveal px-4 py-16 md:py-24">
+        <div class="max-w-3xl mx-auto">
+            <div class="glass-card rounded-3xl p-8 md:p-12 shadow-xl relative">
+                <!-- Section Header -->
+                <div class="flex items-center gap-3 mb-8 justify-center">
+                    <span class="text-3xl">☁️</span>
+                    <h3 class="font-dancing text-3xl md:text-4xl text-pink-500 font-bold">Những Đám Mây</h3>
+                    <span class="text-3xl">☁️</span>
+                </div>
+
+                <div class="space-y-6 text-base md:text-lg leading-relaxed text-gray-600">
+                    <!-- Cloud 1 -->
+                    <div class="bg-gradient-to-r from-sky-50 to-pink-50 rounded-2xl p-6 relative border border-sky-100/50">
+                        <span class="absolute -top-3 -left-2 text-3xl">☀️</span>
+                        <p>
+                            Hi vọng thế giới này <span class="text-sky-500 font-semibold">nhẹ nhàng tựa như mây</span>, có thể che cho bà chút áp lực trong những ngày nắng gắt. 🌤️
+                        </p>
+                    </div>
+
+                    <!-- Cloud 2 -->
+                    <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-6 relative border border-indigo-100/50">
+                        <span class="absolute -top-3 -left-2 text-3xl">🌧️</span>
+                        <p>
+                            Hi vọng thế giới này <span class="text-indigo-500 font-semibold">nhẹ nhàng tựa như mây</span>, kịp đổ cơn mưa để xoá nhoà đi nỗi buồn vào ngày bà cảm thấy mệt mỏi nhất. 💧
+                        </p>
+                    </div>
+
+                    <!-- Cloud 3 -->
+                    <div class="bg-gradient-to-r from-pink-50 to-lavender rounded-2xl p-6 relative border border-pink-100/50">
+                        <span class="absolute -top-3 -left-2 text-3xl">🦋</span>
+                        <p>
+                            Hi vọng bà là một <span class="text-pink-500 font-semibold">đám mây nhỏ nhẹ nhàng trôi</span>, không vì ai mà thay đổi, không vì ai mà buồn bã. ☁️✨
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SECTION 5: CLOSING MESSAGE ===================== -->
+    <section class="section-reveal px-4 py-16 md:py-24">
+        <div class="max-w-3xl mx-auto">
+            <div class="glass-card rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden">
+                <!-- Heart background -->
+                <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-5 pointer-events-none">
+                    <span class="text-[200px]">💝</span>
+                </div>
+
+                <!-- Section Header -->
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="text-3xl">💌</span>
+                    <h3 class="font-dancing text-3xl md:text-4xl text-pink-500 font-bold">Lời Cuối</h3>
+                </div>
+
+                <div class="space-y-5 text-base md:text-lg leading-relaxed text-gray-600 relative z-10">
+                    <p>
+                        Cảm ơn bà vì đã ở đây nghe những lời này của tui, từ tận đáy lòng mình, tui thật sự <span class="text-pink-500 font-semibold">trân quý</span> sự xuất hiện của bà trong cuộc sống của tui. 💕
+                    </p>
+
+                    <p>
+                        Hôm nay là ngày đặc biệt với bà, vì thế nên tui và mấy người bạn khác đã làm ra cái này, hi vọng rằng nó sẽ khiến ngày sinh nhật của bà thêm chút <span class="text-pink-500 font-semibold">đặc biệt</span>. 🎁
+                    </p>
+
+                    <p>
+                        Tui xin lỗi vì không tới gặp bà được, sau này gặp lại tui sẽ tặng bà bù sau nhéee. 🤗
+                    </p>
+                </div>
+
+                <!-- Signature -->
+                <div class="mt-8 text-right">
+                    <p class="font-dancing text-2xl text-pink-400">Với tất cả yêu thương,</p>
+                    <p class="font-dancing text-xl text-pink-300 mt-1">Từ tui và mấy đứa 💕</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FINAL SECTION: BIRTHDAY CAKE ===================== -->
+    <section class="section-reveal px-4 py-16 md:py-32">
+        <div class="max-w-2xl mx-auto text-center">
+            <!-- Birthday Cake Animation -->
+            <div class="mb-8">
+                <div class="text-8xl md:text-9xl mb-4">
+                    <span class="cake-candle inline-block">🕯️</span>
+                </div>
+                <div class="text-7xl md:text-8xl animate-wiggle">🎂</div>
+            </div>
+
+            <!-- Final Message -->
+            <h2 class="font-dancing text-4xl md:text-6xl gradient-text font-bold mb-4">
+                Happy 21st Birthday!
+            </h2>
+            <p class="font-pacifico text-2xl md:text-3xl text-pink-400 mb-6">
+                Yến Phương 🌸
+            </p>
+            <p class="text-gray-500 text-lg mb-8">28 • 03 • 2005 → 28 • 03 • 2026</p>
+
+            <!-- Make a Wish Button -->
+            <button id="wishBtn" onclick="makeWish()" class="bg-gradient-to-r from-pink-400 to-purple-400 text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 animate-heartbeat">
+                🌟 Thổi Nến & Ước Nguyện 🌟
+            </button>
+
+            <!-- Confetti will appear here -->
+            <div id="wish-message" class="hidden mt-8 glass-card rounded-2xl p-6 max-w-md mx-auto">
+                <p class="text-2xl mb-2">🎊</p>
+                <p class="font-dancing text-2xl text-pink-500">Chúc tất cả điều ước đều thành hiện thực!</p>
+                <p class="text-3xl mt-2">🥳🎈🎁🎀</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 px-4">
+        <div class="flex items-center justify-center gap-2 text-pink-300 text-sm">
+            <span>Made with</span>
+            <span class="text-lg animate-heartbeat">💖</span>
+            <span>for Yến Phương</span>
+        </div>
+        <p class="text-pink-200 text-xs mt-2">© 2026 • Happy Birthday 🎂</p>
+    </footer>
+
+    <!-- ===================== JAVASCRIPT ===================== -->
+    <script>
+        // ===== Scroll Reveal Animation =====
+        const sections = document.querySelectorAll('.section-reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+        sections.forEach(s => observer.observe(s));
+
+        // ===== Floating Petals =====
+        function createPetal() {
+            const container = document.getElementById('petals-container');
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+            const petals = ['🌸', '🩷', '💮', '✿', '❀', '🌷'];
+            petal.textContent = petals[Math.floor(Math.random() * petals.length)];
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.fontSize = (Math.random() * 20 + 12) + 'px';
+            const duration = Math.random() * 8 + 8;
+            petal.style.animation = `petalFall ${duration}s linear forwards`;
+            container.appendChild(petal);
+            setTimeout(() => petal.remove(), duration * 1000);
+        }
+        setInterval(createPetal, 1500);
+
+        // ===== Make a Wish (confetti + message) =====
+        function makeWish() {
+            const btn = document.getElementById('wishBtn');
+            const msg = document.getElementById('wish-message');
+            btn.classList.add('hidden');
+            msg.classList.remove('hidden');
+
+            // Spawn confetti
+            for (let i = 0; i < 80; i++) {
+                setTimeout(() => createConfetti(), i * 30);
+            }
+
+            // Spawn hearts
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => createHeartParticle(), i * 50);
+            }
+        }
+
+        function createConfetti() {
+            const colors = ['#f472b6', '#a78bfa', '#fbbf24', '#34d399', '#60a5fa', '#f87171', '#fb923c'];
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti-piece';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.width = (Math.random() * 10 + 5) + 'px';
+            confetti.style.height = (Math.random() * 10 + 5) + 'px';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+            const duration = Math.random() * 3 + 2;
+            confetti.style.animation = `confettiFall ${duration}s linear forwards`;
+            document.body.appendChild(confetti);
+            setTimeout(() => confetti.remove(), duration * 1000);
+        }
+
+        function createHeartParticle() {
+            const heart = document.createElement('div');
+            heart.className = 'heart-particle';
+            heart.textContent = ['💖', '💕', '💗', '💝', '🩷'][Math.floor(Math.random() * 5)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.bottom = '10vh';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 3000);
+        }
+
+        // ===== Music Toggle =====
+        let isMusicPlaying = false;
+        function toggleMusic() {
+            const music = document.getElementById('bgMusic');
+            const icon = document.getElementById('musicIcon');
+            if (isMusicPlaying) {
+                music.pause();
+                icon.textContent = '🔇';
+            } else {
+                music.play().catch(() => {});
+                icon.textContent = '🔊';
+            }
+            isMusicPlaying = !isMusicPlaying;
+        }
+
+        // ===== Click Heart Effect =====
+        document.addEventListener('click', (e) => {
+            const heart = document.createElement('div');
+            heart.className = 'heart-particle';
+            heart.textContent = ['💖', '💕', '🩷'][Math.floor(Math.random() * 3)];
+            heart.style.left = e.clientX + 'px';
+            heart.style.top = e.clientY + 'px';
+            heart.style.position = 'fixed';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 3000);
+        });
+
+        // ===== Auto-play music on first interaction =====
+        let hasInteracted = false;
+        document.addEventListener('click', () => {
+            if (!hasInteracted) {
+                hasInteracted = true;
+                // Don't auto-play, let user decide
+            }
+        }, { once: true });
+    </script>
+</body>
+</html>
